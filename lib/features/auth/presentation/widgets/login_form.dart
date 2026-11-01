@@ -31,6 +31,7 @@ class _LoginFormState extends State<LoginForm> {
       key: _formKey,
       child: Column(
         children: [
+
           CustomTextField(
             label: 'البريد الإلكتروني',
             hint: 'name@example.com',
@@ -61,7 +62,7 @@ class _LoginFormState extends State<LoginForm> {
               child: const Text('نسيت كلمة السر؟'),
             ),
           ),
-          const SizedBox(height: AppSizes.xxl),
+          const SizedBox(height: AppSizes.xl),
           CustomButton(
             text: 'تسجيل الدخول',
             onPressed: () => submitLogin(context, _formKey),
