@@ -23,22 +23,19 @@ abstract final class AppTheme {
     ),
     textTheme: AppTextStyles.textTheme,
     dividerColor: AppColors.border,
-
-    // Text fields
     inputDecorationTheme: InputDecorationTheme(
       filled: true,
       fillColor: AppColors.surface,
-      hintStyle: AppTextStyles.bodyMedium,
+      hintStyle: AppTextStyles.hint,
+      suffixIconColor: AppColors.textSecondary,
       contentPadding:
-      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+      const EdgeInsets.symmetric(horizontal: 16, vertical: 15),
       border: _border(AppColors.border),
       enabledBorder: _border(AppColors.border),
       focusedBorder: _border(AppColors.primary, 1.5),
       errorBorder: _border(AppColors.error),
       focusedErrorBorder: _border(AppColors.error, 1.5),
     ),
-
-    // Buttons
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primary,
@@ -68,8 +65,6 @@ abstract final class AppTheme {
         textStyle: AppTextStyles.link,
       ),
     ),
-
-    // Cards (flat, no shadow)
     cardTheme: CardThemeData(
       color: AppColors.surface,
       elevation: 0,
@@ -79,8 +74,6 @@ abstract final class AppTheme {
         side: const BorderSide(color: AppColors.border),
       ),
     ),
-
-    // Bottom nav
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.surface,
       selectedItemColor: AppColors.primary,
@@ -94,8 +87,6 @@ abstract final class AppTheme {
       ),
       unselectedLabelStyle: AppTextStyles.caption,
     ),
-
-    // Chips
     chipTheme: ChipThemeData(
       backgroundColor: AppColors.surface,
       selectedColor: AppColors.primary,
@@ -103,8 +94,6 @@ abstract final class AppTheme {
       shape: const StadiumBorder(),
       labelStyle: AppTextStyles.label,
     ),
-
-    // Bottom sheet
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: AppColors.surface,
       modalBarrierColor: AppColors.scrim,

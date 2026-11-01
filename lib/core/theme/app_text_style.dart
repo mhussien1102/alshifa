@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../constants/app_colors.dart';
 
-/// Text styles - الخط المحلي IBM Plex Sans Arabic (مسجل في pubspec.yaml)
 abstract final class AppTextStyles {
   static const String fontFamily = 'IBMPlexSansArabic';
 
@@ -31,6 +30,13 @@ abstract final class AppTextStyles {
     color: AppColors.textSecondary,
     height: 1.6,
   );
+  static final input = _base(size: 16, weight: FontWeight.w400);
+  static final hint = _base(
+    size: 16,
+    weight: FontWeight.w400,
+    color: AppColors.textSecondary,
+    height: 1.4,
+  );
   static final label = _base(size: 14, weight: FontWeight.w600);
   static final button =
   _base(size: 17, weight: FontWeight.w700, color: Colors.white);
@@ -46,6 +52,7 @@ abstract final class AppTextStyles {
     headlineLarge: headlineLarge,
     headlineMedium: headlineMedium,
     titleMedium: titleMedium,
+    bodyLarge: input,
     bodyMedium: bodyMedium,
     labelLarge: label,
     bodySmall: caption,

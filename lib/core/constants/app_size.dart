@@ -1,6 +1,4 @@
-/// مسافات ومقاسات (نظام 4/8)
 abstract final class AppSizes {
-  // Spacing
   static const double xs = 4;
   static const double sm = 8;
   static const double md = 12;
@@ -9,11 +7,9 @@ abstract final class AppSizes {
   static const double xxl = 24;
   static const double xxxl = 32;
 
-  // Screen padding
   static const double screenPadding = 20;
   static const double authPadding = 24;
 
-  // Radius
   static const double radiusField = 14;
   static const double radiusButton = 14;
   static const double radiusCard = 20;
@@ -21,8 +17,7 @@ abstract final class AppSizes {
   static const double radiusSheet = 24;
   static const double radiusPill = 999;
 
-  // Components
-  static const double fieldHeight = 48;
+  static const double fieldHeight = 52;
   static const double buttonHeight = 54;
   static const double avatar = 56;
   static const double iconTile = 60;
@@ -31,7 +26,7 @@ abstract final class AppSizes {
   static const double otpHeight = 56;
   static const double borderWidth = 1;
 
-  // Splash
+  static const double authLogo = 96;
   static const double splashLogo = 132;
   static const double loadingBarWidth = 120;
   static const double loadingBarHeight = 3;
