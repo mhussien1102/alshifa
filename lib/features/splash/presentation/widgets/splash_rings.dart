@@ -10,7 +10,7 @@ class SplashRings extends StatelessWidget {
 }
 
 class _RingsPainter extends CustomPainter {
-  static const _designWidth = 390.0; // عرض التصميم الأصلي
+  static const _designWidth = 390.0;
   static const _radii = [150.0, 235.0, 325.0];
 
   @override

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_size.dart';
-import '../widgets/splash_loading_bar.dart';
+import '../widgets/splash_buttom_sections.dart';
 import '../widgets/splash_logo.dart';
 import '../widgets/splash_rings.dart';
 
-/// شاشة البداية - ديزاين فقط (من غير Cubit أو Navigation)
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
 
@@ -20,8 +19,6 @@ class SplashPage extends StatelessWidget {
       body: Stack(
         children: [
           const Positioned.fill(child: SplashRings()),
-
-          // اللوجو + الاسم + الشعار
           Positioned.fill(
             child: Column(
               children: [
@@ -46,13 +43,11 @@ class SplashPage extends StatelessWidget {
               ],
             ),
           ),
-
-          // شريط التحميل
           const Positioned(
-            left: 0,
-            right: 0,
-            bottom: AppSizes.xxxl * 2 + AppSizes.sm,
-            child: SplashLoadingBar(),
+            left: AppSizes.authPadding,
+            right: AppSizes.authPadding,
+            bottom: AppSizes.xxxl * 2,
+            child: SplashBottomSection(),
           ),
         ],
       ),
