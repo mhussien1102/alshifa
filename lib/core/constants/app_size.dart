@@ -26,6 +26,11 @@ abstract final class AppSizes {
   static const double otpHeight = 56;
   static const double borderWidth = 1;
 
+  static const double iconTileLarge = 72;
+  static const double backButton = 46;
+  static const double arrowButton = 44;
+  static const double secondaryButtonHeight = 48;
+  static const double calendarDayHeight = 44;
   static const double authLogo = 96;
   static const double splashLogo = 132;
   static const double loadingBarWidth = 120;

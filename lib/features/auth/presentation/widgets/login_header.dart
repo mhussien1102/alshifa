@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../../core/constants/app_assets.dart';
 import '../../../../core/constants/app_colors.dart';
 import '../../../../core/constants/app_size.dart';
+import '../../../../core/widgets/app_logo.dart';
 
 class LoginHeader extends StatelessWidget {
   const LoginHeader({super.key});
@@ -14,11 +13,7 @@ class LoginHeader extends StatelessWidget {
 
     return Column(
       children: [
-        SvgPicture.asset(
-          AppAssets.logo,
-          width: AppSizes.authLogo,
-          height: AppSizes.authLogo,
-        ),
+        const AppLogo(size: AppSizes.authLogo),
         const SizedBox(height: AppSizes.lg),
         Text(
           'مستشفى الشفاء',
