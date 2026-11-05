@@ -129,7 +129,7 @@ class _OtpBox extends StatelessWidget {
       ),
       child: Text(
         character,
-        style: AppTextStyles.titleMedium.copyWith(fontSize: 22),
+        style: AppTextStyles.titleMedium.copyWith(fontSize: 20),
       ),
     );
   }

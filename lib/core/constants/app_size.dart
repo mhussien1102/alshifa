@@ -22,8 +22,8 @@ abstract final class AppSizes {
   static const double avatar = 56;
   static const double iconTile = 60;
   static const double logo = 68;
-  static const double otpWidth = 50;
-  static const double otpHeight = 56;
+  static const double otpWidth = 44;
+  static const double otpHeight = 50;
   static const double borderWidth = 1;
 
   static const double iconTileLarge = 72;
