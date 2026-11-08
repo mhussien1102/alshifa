@@ -31,6 +31,13 @@ abstract final class Formatters {
 
   static String age(int years) => '${digits(years)} سنة';
 
+  static String itemsCount(int count) {
+    if (count == 1) return 'منتج واحد';
+    if (count == 2) return 'منتجان';
+    if (count <= 10) return '${digits(count)} منتجات';
+    return '${digits(count)} منتجًا';
+  }
+
   static String price(num value) {
     final text = value == value.roundToDouble()
         ? value.toInt().toString()

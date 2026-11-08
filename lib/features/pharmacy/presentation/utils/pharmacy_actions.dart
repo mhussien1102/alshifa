@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../app/router/app_routes.dart';
@@ -7,10 +8,17 @@ import '../../../../core/constants/app_size.dart';
 import '../../../../core/utils/fly_animation.dart';
 import '../../../../core/utils/render_utils.dart';
 import '../../domain/entities/product.dart';
+import '../cubit/cart_cubit.dart';
 import '../widgets/product_image_tile.dart';
 
 void openCart(BuildContext context) {
+  if (context.read<CartCubit>().state.isEmpty) return;
   context.push(AppRoutes.cart);
+}
+
+int visibleCartCount(int total, int pending) {
+  final count = total - pending;
+  return count < 0 ? 0 : count;
 }
 
 void flyProductToCart({

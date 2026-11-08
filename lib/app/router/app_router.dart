@@ -6,6 +6,7 @@ import '../../features/auth/presentation/pages/forgot_password_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
 import '../../features/auth/presentation/pages/reset_password_page.dart';
+import '../../features/pharmacy/presentation/pages/cart_page.dart';
 import '../../features/pharmacy/presentation/pages/pharmacy_page.dart';
 import '../../features/splash/presentation/pages/splash_page.dart';
 import '../shell/main_shell.dart';
@@ -92,7 +93,7 @@ abstract final class AppRouter {
       ),
       GoRoute(
         path: AppRoutes.cart,
-        builder: (context, state) => const PlaceholderPage(title: 'العربة'),
+        builder: (context, state) => const CartPage(),
       ),
     ],
   );
