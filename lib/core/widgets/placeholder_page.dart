@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
+
+import '../constants/app_size.dart';
+import 'app_back_button.dart';
 
 class PlaceholderPage extends StatelessWidget {
   final String title;
@@ -8,8 +12,28 @@ class PlaceholderPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(title)),
-      body: Center(child: Text(title)),
+      body: SafeArea(
+        child: Column(
+          children: [
+            if (context.canPop())
+              const Padding(
+                padding: EdgeInsets.all(AppSizes.authPadding),
+                child: Align(
+                  alignment: AlignmentDirectional.centerStart,
+                  child: AppBackButton(),
+                ),
+              ),
+            Expanded(
+              child: Center(
+                child: Text(
+                  title,
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

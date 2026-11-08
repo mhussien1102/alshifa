@@ -30,4 +30,11 @@ abstract final class Formatters {
   }
 
   static String age(int years) => '${digits(years)} سنة';
+
+  static String price(num value) {
+    final text = value == value.roundToDouble()
+        ? value.toInt().toString()
+        : value.toStringAsFixed(2);
+    return '${digits(text)} ج.م';
+  }
 }

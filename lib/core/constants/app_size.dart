@@ -22,8 +22,8 @@ abstract final class AppSizes {
   static const double avatar = 56;
   static const double iconTile = 60;
   static const double logo = 68;
-  static const double otpWidth = 44;
-  static const double otpHeight = 50;
+  static const double otpWidth = 50;
+  static const double otpHeight = 56;
   static const double borderWidth = 1;
 
   static const double iconTileLarge = 72;
@@ -32,6 +32,10 @@ abstract final class AppSizes {
   static const double secondaryButtonHeight = 48;
   static const double calendarDayHeight = 44;
   static const double authLogo = 96;
+  static const double cartButton = 48;
+  static const double circleButton = 44;
+  static const double bottomNavHeight = 72;
+  static const double productCardHeight = 304;
   static const double splashLogo = 132;
   static const double loadingBarWidth = 120;
   static const double loadingBarHeight = 3;
