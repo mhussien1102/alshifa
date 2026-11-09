@@ -16,6 +16,10 @@ void openCart(BuildContext context) {
   context.push(AppRoutes.cart);
 }
 
+void openProductDetails(BuildContext context, Product product) {
+  context.push(AppRoutes.productDetails, extra: product);
+}
+
 int visibleCartCount(int total, int pending) {
   final count = total - pending;
   return count < 0 ? 0 : count;
@@ -27,6 +31,8 @@ void flyProductToCart({
   required Rect? from,
   required GlobalKey cartKey,
   required VoidCallback onLanded,
+  double radius = AppSizes.radiusField,
+  double bottleScale = 0.575,
 }) {
   if (from == null) return;
   final to = globalRectOf(cartKey);
@@ -42,7 +48,7 @@ void flyProductToCart({
     onLanded: onLanded,
     child: DecoratedBox(
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(AppSizes.radiusField),
+        borderRadius: BorderRadius.circular(radius),
         boxShadow: [
           BoxShadow(
             color: AppColors.primaryDark.withValues(alpha: 0.25),
@@ -55,6 +61,8 @@ void flyProductToCart({
         scheme: ProductColorScheme.values.byName(product.color.name),
         width: from.width,
         height: from.height,
+        radius: radius,
+        bottleScale: bottleScale,
       ),
     ),
   );

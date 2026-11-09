@@ -7,6 +7,7 @@ import 'product_card.dart';
 class ProductsGrid extends StatelessWidget {
   final List<Product> products;
   final Map<String, int> quantities;
+  final ValueChanged<Product> onOpen;
   final void Function(Product product, Rect? from) onAdd;
   final ValueChanged<String> onIncrement;
   final ValueChanged<String> onDecrement;
@@ -15,6 +16,7 @@ class ProductsGrid extends StatelessWidget {
     super.key,
     required this.products,
     required this.quantities,
+    required this.onOpen,
     required this.onAdd,
     required this.onIncrement,
     required this.onDecrement,
@@ -42,6 +44,7 @@ class ProductsGrid extends StatelessWidget {
           key: ValueKey(product.id),
           product: product,
           quantity: quantities[product.id] ?? 0,
+          onTap: () => onOpen(product),
           onAdd: (from) => onAdd(product, from),
           onIncrement: () => onIncrement(product.id),
           onDecrement: () => onDecrement(product.id),

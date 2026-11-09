@@ -6,8 +6,10 @@ import '../../features/auth/presentation/pages/forgot_password_page.dart';
 import '../../features/auth/presentation/pages/login_page.dart';
 import '../../features/auth/presentation/pages/register_page.dart';
 import '../../features/auth/presentation/pages/reset_password_page.dart';
+import '../../features/pharmacy/domain/entities/product.dart';
 import '../../features/pharmacy/presentation/pages/cart_page.dart';
 import '../../features/pharmacy/presentation/pages/pharmacy_page.dart';
+import '../../features/pharmacy/presentation/pages/product_details_page.dart';
 import '../../features/splash/presentation/pages/splash_page.dart';
 import '../shell/main_shell.dart';
 import 'app_routes.dart';
@@ -90,6 +92,16 @@ abstract final class AppRouter {
             ],
           ),
         ],
+      ),
+      GoRoute(
+        path: AppRoutes.productDetails,
+        builder: (context, state) {
+          final product = state.extra as Product?;
+          if (product == null) {
+            return const PlaceholderPage(title: 'المنتج غير موجود');
+          }
+          return ProductDetailsPage(product: product);
+        },
       ),
       GoRoute(
         path: AppRoutes.cart,

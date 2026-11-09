@@ -10,6 +10,7 @@ class QuantityStepper extends StatelessWidget {
   final VoidCallback onIncrement;
   final VoidCallback onDecrement;
   final double height;
+  final double padding;
 
   const QuantityStepper({
     super.key,
@@ -17,13 +18,16 @@ class QuantityStepper extends StatelessWidget {
     required this.onIncrement,
     required this.onDecrement,
     this.height = 44,
+    this.padding = 2,
   });
 
   @override
   Widget build(BuildContext context) {
+    final buttonSize = height - padding * 2;
+
     return Container(
       height: height,
-      padding: const EdgeInsets.all(2),
+      padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
         color: AppColors.primaryTint,
         borderRadius: BorderRadius.circular(AppSizes.radiusField),
@@ -31,7 +35,7 @@ class QuantityStepper extends StatelessWidget {
       child: Row(
         children: [
           _StepButton(
-            size: height - 4,
+            size: buttonSize,
             icon: LucideIcons.minus,
             background: AppColors.surface,
             color: AppColors.textPrimary,
@@ -49,7 +53,7 @@ class QuantityStepper extends StatelessWidget {
             ),
           ),
           _StepButton(
-            size: height - 4,
+            size: buttonSize,
             icon: LucideIcons.plus,
             background: AppColors.primary,
             color: Colors.white,

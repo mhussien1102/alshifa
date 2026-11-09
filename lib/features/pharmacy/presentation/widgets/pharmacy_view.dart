@@ -50,6 +50,7 @@ class _PharmacyViewState extends State<PharmacyView> {
               child: ProductsGrid(
                 products: sampleProducts,
                 quantities: cart.quantities,
+                onOpen: (product) => openProductDetails(context, product),
                 onAdd: (product, from) {
                   if (from != null) setState(() => _pending++);
                   context.read<CartCubit>().add(product);

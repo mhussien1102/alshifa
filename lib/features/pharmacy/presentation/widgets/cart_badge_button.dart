@@ -9,12 +9,16 @@ class CartBadgeButton extends StatefulWidget {
   final int count;
   final int bumpCount;
   final VoidCallback onPressed;
+  final bool filled;
+  final double size;
 
   const CartBadgeButton({
     super.key,
     required this.count,
     required this.bumpCount,
     required this.onPressed,
+    this.filled = true,
+    this.size = AppSizes.cartButton,
   });
 
   @override
@@ -62,18 +66,22 @@ class _CartBadgeButtonState extends State<CartBadgeButton>
         clipBehavior: Clip.none,
         children: [
           Material(
-            color: AppColors.primary,
-            shape: const CircleBorder(),
+            color: widget.filled ? AppColors.primary : AppColors.surface,
+            shape: CircleBorder(
+              side: widget.filled
+                  ? BorderSide.none
+                  : const BorderSide(color: AppColors.border),
+            ),
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: widget.onPressed,
-              child: const SizedBox(
-                width: AppSizes.cartButton,
-                height: AppSizes.cartButton,
+              child: SizedBox(
+                width: widget.size,
+                height: widget.size,
                 child: Icon(
                   LucideIcons.shoppingCart,
                   size: 22,
-                  color: Colors.white,
+                  color: widget.filled ? Colors.white : AppColors.textPrimary,
                 ),
               ),
             ),

@@ -8,12 +8,16 @@ class ProductImageTile extends StatelessWidget {
   final ProductColorScheme scheme;
   final double width;
   final double height;
+  final double radius;
+  final double bottleScale;
 
   const ProductImageTile({
     super.key,
     required this.scheme,
     this.width = double.infinity,
     this.height = 120,
+    this.radius = AppSizes.radiusField,
+    this.bottleScale = 0.575,
   });
 
   @override
@@ -24,9 +28,9 @@ class ProductImageTile extends StatelessWidget {
       alignment: Alignment.center,
       decoration: BoxDecoration(
         color: scheme.background,
-        borderRadius: BorderRadius.circular(AppSizes.radiusField),
+        borderRadius: BorderRadius.circular(radius),
       ),
-      child: ProductBottle(scheme: scheme, height: height * 0.575),
+      child: ProductBottle(scheme: scheme, height: height * bottleScale),
     );
   }
 }

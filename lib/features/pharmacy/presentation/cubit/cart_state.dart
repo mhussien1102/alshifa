@@ -19,6 +19,13 @@ class CartState extends Equatable {
     for (final item in items) item.product.id: item.quantity,
   };
 
+  int quantityOf(String productId) {
+    for (final item in items) {
+      if (item.product.id == productId) return item.quantity;
+    }
+    return 0;
+  }
+
   @override
   List<Object?> get props => [items];
 }

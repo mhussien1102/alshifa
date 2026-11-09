@@ -16,6 +16,7 @@ abstract final class AppSizes {
   static const double radiusTile = 20;
   static const double radiusSheet = 24;
   static const double radiusPill = 999;
+  static const double radiusHero = 28;
 
   static const double fieldHeight = 52;
   static const double buttonHeight = 54;
