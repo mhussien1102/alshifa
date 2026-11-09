@@ -1,0 +1,1 @@
+enum PaymentMethod { visa, paypal, vodafoneCash, cash }

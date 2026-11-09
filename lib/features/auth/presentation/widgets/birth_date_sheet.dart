@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../../core/constants/app_size.dart';
 import '../../../../core/widgets/custom_button.dart';
+import '../../../../core/widgets/sheet_header.dart';
 import '../utils/calendar_utils.dart';
-import 'birth_date_sheet_header.dart';
 import 'birth_date_summary.dart';
 import 'calendar_grid.dart';
 import 'calendar_navigator.dart';
@@ -37,7 +37,10 @@ class _BirthDateSheetState extends State<BirthDateSheet> {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            BirthDateSheetHeader(onClose: () => Navigator.of(context).pop()),
+            SheetHeader(
+              title: 'تاريخ الميلاد',
+              onClose: () => Navigator.of(context).pop(),
+            ),
             const SizedBox(height: AppSizes.lg),
             BirthDateSummary(date: _selected),
             const SizedBox(height: AppSizes.lg),

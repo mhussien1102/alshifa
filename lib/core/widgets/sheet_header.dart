@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
-import '../../../../core/constants/app_colors.dart';
+import '../constants/app_colors.dart';
 
-class BirthDateSheetHeader extends StatelessWidget {
+class SheetHeader extends StatelessWidget {
+  final String title;
   final VoidCallback onClose;
 
-  const BirthDateSheetHeader({super.key, required this.onClose});
+  const SheetHeader({super.key, required this.title, required this.onClose});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class BirthDateSheetHeader extends StatelessWidget {
       children: [
         Expanded(
           child: Text(
-            'تاريخ الميلاد',
+            title,
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium

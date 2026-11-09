@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
 import '../constants/app_colors.dart';
@@ -13,8 +14,11 @@ class CustomTextField extends StatefulWidget {
   final TextInputType keyboardType;
   final TextInputAction textInputAction;
   final bool isPassword;
+  final bool obscureText;
   final bool readOnly;
   final bool compact;
+  final int maxLines;
+  final List<TextInputFormatter>? inputFormatters;
   final VoidCallback? onTap;
   final IconData? prefixIcon;
   final Color? fillColor;
@@ -24,14 +28,17 @@ class CustomTextField extends StatefulWidget {
     super.key,
     required this.label,
     required this.hint,
-    this.helperText,
     required this.controller,
+    this.helperText,
     this.validator,
     this.keyboardType = TextInputType.text,
     this.textInputAction = TextInputAction.next,
     this.isPassword = false,
+    this.obscureText = false,
     this.readOnly = false,
     this.compact = false,
+    this.maxLines = 1,
+    this.inputFormatters,
     this.onTap,
     this.prefixIcon,
     this.fillColor,
@@ -43,7 +50,7 @@ class CustomTextField extends StatefulWidget {
 }
 
 class _CustomTextFieldState extends State<CustomTextField> {
-  late bool _obscure = widget.isPassword;
+  late bool _obscure = widget.isPassword || widget.obscureText;
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +64,9 @@ class _CustomTextFieldState extends State<CustomTextField> {
           validator: widget.validator,
           keyboardType: widget.keyboardType,
           textInputAction: widget.textInputAction,
+          inputFormatters: widget.inputFormatters,
           obscureText: _obscure,
+          maxLines: widget.maxLines,
           readOnly: widget.readOnly,
           showCursor: !widget.readOnly,
           onTap: widget.onTap,
