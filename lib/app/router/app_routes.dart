@@ -12,6 +12,7 @@ abstract final class AppRoutes {
   static const profile = '/profile';
 
   static const notifications = '/notifications';
+  static const support = '/support';
   static const bookAppointment = '/book-appointment';
   static const pharmacy = '/pharmacy';
   static const productDetails = '/product-details';

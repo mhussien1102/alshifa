@@ -94,6 +94,17 @@ abstract final class AppTheme {
       shape: const StadiumBorder(),
       labelStyle: AppTextStyles.label,
     ),
+    drawerTheme: DrawerThemeData(
+      backgroundColor: AppColors.surface,
+      scrimColor: AppColors.scrim.withValues(alpha: 0.6),
+      elevation: 0,
+      width: 300,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.horizontal(
+          right: Radius.circular(AppSizes.radiusHero),
+        ),
+      ),
+    ),
     bottomSheetTheme: const BottomSheetThemeData(
       backgroundColor: AppColors.surface,
       modalBarrierColor: AppColors.scrim,

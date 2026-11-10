@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:lucide_icons_flutter/lucide_icons.dart';
 
+import '../../../../app/shell/widgets/app_menu_button.dart';
 import '../../../../core/constants/app_size.dart';
-import '../../../../core/widgets/app_circle_button.dart';
 import '../utils/pharmacy_actions.dart';
 import 'cart_badge_button.dart';
 
@@ -31,7 +30,7 @@ class PharmacyHeader extends StatelessWidget {
         const SizedBox(width: AppSizes.md),
         Text('الأدوية', style: Theme.of(context).textTheme.headlineMedium),
         const Spacer(),
-        const AppCircleButton(icon: LucideIcons.menu),
+        const AppMenuButton(),
       ],
     );
   }
