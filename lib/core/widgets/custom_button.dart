@@ -14,6 +14,7 @@ class CustomButton extends StatelessWidget {
   final bool isLoading;
   final double? width;
   final double height;
+  final EdgeInsetsGeometry? padding;
 
   const CustomButton({
     super.key,
@@ -25,6 +26,7 @@ class CustomButton extends StatelessWidget {
     this.isLoading = false,
     this.width,
     this.height = AppSizes.buttonHeight,
+    this.padding,
   });
 
   @override
@@ -45,6 +47,7 @@ class CustomButton extends StatelessWidget {
             disabledForegroundColor:
             (foregroundColor ?? Colors.white).withValues(alpha: 0.9),
             minimumSize: Size(0, height),
+            padding: padding,
           ),
           child: _content(foregroundColor ?? Colors.white),
         ),
@@ -53,6 +56,7 @@ class CustomButton extends StatelessWidget {
           style: OutlinedButton.styleFrom(
             foregroundColor: foregroundColor,
             minimumSize: Size(0, height),
+            padding: padding,
           ),
           child: _content(foregroundColor ?? AppColors.primary),
         ),
@@ -62,6 +66,7 @@ class CustomButton extends StatelessWidget {
             foregroundColor: AppColors.error,
             side: const BorderSide(color: AppColors.error),
             minimumSize: Size(0, height),
+            padding: padding,
           ),
           child: _content(AppColors.error),
         ),
@@ -77,6 +82,9 @@ class CustomButton extends StatelessWidget {
         child: CircularProgressIndicator(strokeWidth: 2.5, color: loaderColor),
       );
     }
-    return Text(text);
+    return FittedBox(
+      fit: BoxFit.scaleDown,
+      child: Text(text, maxLines: 1, softWrap: false),
+    );
   }
 }

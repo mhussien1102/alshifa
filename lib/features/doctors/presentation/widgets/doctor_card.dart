@@ -78,10 +78,10 @@ class DoctorCard extends StatelessWidget {
             child: CustomButton(
               text: 'احجز',
               height: AppSizes.circleButton,
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               onPressed: onBook,
             ),
-          ),
-        ],
+          ),        ],
       ),
     );
   }
